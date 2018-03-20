@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthdate: 2018-03-20
+  gender: 1
+  color: 1
+  weight: 1.5
+  description: MyString
+
+two:
+  name: MyString
+  birthdate: 2018-03-20
+  gender: 1
+  color: 1
+  weight: 1.5
+  description: MyString
