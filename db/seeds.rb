@@ -16,3 +16,7 @@ jigen = Dog.create owner_id: bary.id, name: 'Jigen', birthdate: Date.parse('2020
 Toy.create dog_id: goemon.id, name: 'Mesh Ball', category: TOYCATEGORY[:fetch]
 Toy.create dog_id: goemon.id, name: 'Natural Cotton Rope', category: TOYCATEGORY[:pull]
 Toy.create dog_id: jigen.id, name: 'Kong', category: TOYCATEGORY[:think]
+
+john = Owner.create name: 'John', birthdate: Date.parse('1989-12-26'), gender: GENDER[:male]
+boo = Dog.create owner_id: john.id, name: 'Boo', birthdate: Date.parse('2018-02-11'), gender: GENDER[:male], color: COLOR[:white], weight: 9.5, description: 'Ridiculously good boy. '
+FriendShip.create dog_id: goemon.id, friend_id: boo.id
