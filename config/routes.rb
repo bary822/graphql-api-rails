@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "/graphql", to: "graphql#execute"
   resources :toys
   resources :friend_ships
   resources :dogs
