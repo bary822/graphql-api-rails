@@ -10,4 +10,13 @@ Types::QueryType = GraphQL::ObjectType.define do
       "Hello World!"
     }
   end
+
+  field :owner do
+    type Types::OwnerType
+    description "A human who loves dogs"
+    argument :owner_id, types.Int
+    resolve ->(obj, args, ctx) {
+      Owner.find(args[:owner_id])
+    }
+  end
 end
