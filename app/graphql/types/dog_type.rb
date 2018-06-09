@@ -6,4 +6,5 @@ class Types::DogType < Types::BaseObject
   field :weight, Float, 'How much heavy the dog is', null: false
   field :description, String, 'Characteristic, likes, and whatever describes the dog', null: false
   field :favorite_toys, [Types::ToyType], 'Dog can treat everything as toy though, especially these things', null: true
+  field :friends, [Types::DogType], 'Another dogs to run, bark, and sometimes fight with.', null: true
 end
