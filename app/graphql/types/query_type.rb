@@ -1,22 +1,11 @@
-Types::QueryType = GraphQL::ObjectType.define do
-  name "Query"
-  # Add root-level fields here.
-  # They will be entry points for queries on your schema.
+class Types::QueryType < Types::BaseObject
+  description 'Root level type for Query'
 
-  # TODO: remove me
-  field :testField, types.String do
-    description "An example field added by the generator"
-    resolve ->(obj, args, ctx) {
-      "Hello World!"
-    }
+  field :owner, Types::OwnerType, 'A human who loves dogs', null: true, method: :find_owner do
+    argument :owner_id, ID, 'ID of the owner', required: true
   end
 
-  field :owner do
-    type Types::OwnerType
-    description "A human who loves dogs"
-    argument :owner_id, types.Int
-    resolve ->(obj, args, ctx) {
-      Owner.find(args[:owner_id])
-    }
+  def find_owner(owner_id:)
+    Owner.find(owner_id)
   end
 end
