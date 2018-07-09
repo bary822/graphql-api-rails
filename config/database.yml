@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
   database: graphql-api-rails_production
-  username: graphql-api-rails
+  username: "hiroto.fukui822"
   password: <%= ENV['GRAPHQL-API-RAILS_DATABASE_PASSWORD'] %>
+  socket: "/cloudsql/rails-graphql-api:asia-northeast1:graphql-api-rails"
