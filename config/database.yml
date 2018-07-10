@@ -15,11 +15,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  host: '127.0.0.1'
 
 development:
   <<: *default
   database: graphql-api-rails_development
+  host: '127.0.0.1'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +27,7 @@ development:
 test:
   <<: *default
   database: graphql-api-rails_test
+  host: '127.0.0.1'
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -53,6 +54,5 @@ production:
   pool: 5
   timeout: 5000
   database: graphql-api-rails_production
-  username: "hiroto.fukui822"
   password: <%= ENV['GRAPHQL-API-RAILS_DATABASE_PASSWORD'] %>
   socket: "/cloudsql/rails-graphql-api:asia-northeast1:graphql-api-rails"
