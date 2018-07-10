@@ -47,3 +47,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2018-04-13 06:55:31 +0900 by hfukui:
 gem "graphql", "~> 1.8"
+
+gem "appengine", "~> 0.4.5"
